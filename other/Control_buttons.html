@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/zui.min.css">
+	<link rel="stylesheet" href="prism/prism.css">
+	<style>
+.table td{height: 60px;line-height: 60px;text-align: center;}
+.table th{height: 30px;line-height: 30px;text-align: center;}
+caption{text-align: center;font-size: 18px}
+	</style>
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+
+	<table class="table">
+		<caption>按钮的颜色</caption>
+		<thead>
+			<tr>
+				<th>示例</th>
+				<th>按钮的颜色跟classname有关</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><button class="btn " type="button">默认</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn" type="button"&gt;主要按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-primary" type="button">主要</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-" type="button"&gt;主要&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-info" type="button">信息</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-info" type="button"&gt;信息&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-success" type="button">成功</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-success" type="button"&gt;成功&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-warning" type="button">警告</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-warning" type="button"&gt;警告&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-danger" type="button">危险</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-danger" type="button"&gt;危险&lt;/button&gt;</code></pre></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<table class="table" style="">
+		<caption>按钮的类型</caption>
+		<thead>
+			<tr>
+				<th>示例</th>
+				<th>代码</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><button class="btn" type="button">标准按钮</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn" type="button"&gt;标准按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><a class="btn" href="#">a标签点击跳转</a></td>
+				<td><pre><code class="language-markup">&lt;a class="btn" href="#"&gt;a标签点击跳转&lt;/a&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-link" type="button">链接按钮</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-link" type="button"&gt;链接按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td>
+					<div class="btn-group">
+					  	<button class="btn">按钮组</button>
+					  	<button class="btn">第二个</button>
+					  	<button class="btn">第三个</button>
+					</div>
+				</td>
+				<td>
+					<pre><code class="language-markup">&lt;div class="btn-group"&gt;&lt;button class="btn"&gt;按钮组&lt;/button&gt;
+	&lt;button class="btn"&gt;第二个&lt;/button&gt;
+	&lt;button class="btn"&gt;第三个&lt;/button&gt;
+&lt;div&gt;</code></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table">
+		<caption>按钮的大小</caption>
+		<thead>
+			<tr>
+				<th>示例</th>
+				<th>代码</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><button class="btn btn-lg" type="button">大尺寸按钮</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-lg" type="button"&gt;大尺寸按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn" type="button">默认大小按钮</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn" type="button"&gt;默认大小按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-sm" type="button">较小的按钮</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-sm" type="button"&gt;较小的按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-mini" type="button">迷你按钮</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-mini" type="button"&gt;迷你按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button class="btn btn-block" type="button">块状按钮</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn btn-lg" type="button"&gt;块状按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+		</tbody>
+	</table>
+	<table class="table">
+		<caption>按钮的不同状态</caption>
+		<thead>
+			<tr>
+				<th>示例</th>
+				<th>代码</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><button class="btn" type="button"><i class="icon icon-star"></i> 带图标的按钮</button></td>
+				<td><pre><code class="language-markup">&lt;button class="btn" type="button"&gt;&lt;i class="icon icon-star"&gt;&lt;/i&gt; 带图标的按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button data-toggle="button" class="btn" type="button">状态切换按钮</button></td>
+				<td><pre><code class="language-markup">&lt;button data-toggle="button" class="btn" type="button"&gt;状态切换按钮&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td>
+					<div class="btn-group" data-toggle="buttons"> <br>
+						<label class="btn active">
+							<input type="checkbox" checked> 多选1
+						</label>
+						<label class="btn">
+							<input type="checkbox"> 多选2
+						</label>
+						<label class="btn">
+							<input type="checkbox"> 多选3
+						</label>
+					</div>
+				</td>
+				<td><pre><code class="language-markup">&lt;div class="btn-group" data-toggle="buttons"&gt; &lt;br&gt;
+	&lt;label class="btn active"&gt;
+		&lt;input type="checkbox" checked&gt; 多选1
+	&lt;/label&gt;
+	&lt;label class="btn"&gt;
+		&lt;input type="checkbox"&gt; 多选2
+	&lt;/label&gt;
+	&lt;label class="btn"&gt;
+		&lt;input type="checkbox"&gt; 多选3
+	&lt;/label&gt;
+&lt;/div&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td>
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-primary active">
+							<input type="radio" name="options" id="option1" checked> 单选1
+						</label>
+						<label class="btn btn-primary">
+							<input type="radio" name="options" id="option2"> 单选2
+						</label>
+						<label class="btn btn-primary">
+							<input type="radio" name="options" id="option3"> 单选3
+						</label>
+					</div>
+				</td>
+				<td><pre><code class="language-markup">&lt;div class="btn-group" data-toggle="buttons"&gt;
+	&lt;label class="btn btn-primary active"&gt;
+		&lt;input type="radio" name="options" id="option1" checked&gt; 单选1
+	&lt;/label&gt;
+	&lt;label class="btn btn-primary"&gt;
+		&lt;input type="radio" name="options" id="option2"&gt; 单选2
+	&lt;/label&gt;
+	&lt;label class="btn btn-primary"&gt;
+		&lt;input type="radio" name="options" id="option3"&gt; 单选3
+	&lt;/label&gt;
+&lt;/div&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><button id="loadingBtnExample" type="button" class="btn btn-primary" data-loading-text="正在加载...">加载状态</button></td>
+				<td><pre><code class="language-markup">&lt;button id="loadingBtnExample" type="button" class="btn btn-primary" data-loading-text="正在加载..."&gt;加载状态&lt;/button&gt;</code></pre></td>
+			</tr>
+			<tr>
+				<td><a disabled href="your/url/" class="btn disabled">禁用的操作</a></td>
+				<td>
+					<pre><code class="language-markup">&lt;a disabled href="your/url/" class="btn disabled"&gt;禁用的操作&lt;/a&gt;</code></pre>
+					<pre><code class="language-javascript">
+$('#loadingBtnExample').on('click', function() {
+	var $btn = $(this);
+	$btn.button('loading');
+	setTimeout(function() {	<!-- 此处使用 setTimeout 来模拟你的复杂功能逻辑 -->
+	    $btn.button('reset');
+	}, 2000);
+});</code></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+<script>
+	$('#loadingBtnExample').on('click', function() {
+		var $btn = $(this);
+		$btn.button('loading');
+
+		// 此处使用 setTimeout 来模拟你的复杂功能逻辑
+		setTimeout(function() {
+		    $btn.button('reset');
+		}, 2000);
+	});
+
+	$('pre').addClass("line-numbers").css("white-space", "pre-wrap");
+</script>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页格局代码</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="prism/prism.css">
+    <script src="../js/jquery.min.js"></script>
+    <link href="../Zui/css/zui.min.css" rel="stylesheet">
+<style>
+	::-webkit-scrollbar {
+	    width: 10px;
+	    height: 10px;
+	}
+	::-webkit-scrollbar-thumb {
+	    min-height: 28px;
+	    padding-top: 100;
+	    background-color: rgba(0,0,0,.2);
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+	    border-radius: 5px;
+	    -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+	}
+</style>
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+	<div>
+		本框架分为上下格局及左右格局，一切基于Jquery、Zui		一切Zui代码皆可用
+		<br>
+		IE上的兼容性（当前更改仅适用于&nbsp;浏览器模式：IE9，文档模式：IE9标准）
+	</div>
+	<a href="后台模版1.0.zip" download="后台模版1.0.zip"><button class="btn btn-info"><i class="icon icon-download-alt"></i> Download</button></a><br>
+	首页基本布局：
+	<pre style="height: 200px;"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;实验上下分布格局&lt;/title&gt;
+	&lt;meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"&gt;
+    &lt;link href="Zui/css/zui.min.css" rel="stylesheet"&gt;
+    &lt;link rel="stylesheet" href="Zui/css/main.css"&gt;
+    &lt;link rel="stylesheet" href="Zui/css/main-color.css"&gt;
+    &lt;!--IE8只能支持jQuery1.9--&gt;
+	&lt;!--[if lte IE 8]&gt;
+	&lt;script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script src="jquery-1.9.0.js"&gt;
+	&lt;![endif]--&gt;
+
+     &lt;!--[if lt IE 9]&gt;
+	  &lt;script src="dist/lib/ieonly/html5shiv.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+	&lt;!--[if lt IE 9]&gt;
+	  &lt;script src="dist/lib/ieonly/respond.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+	&lt;!--[if lt IE 9]&gt;
+	  &lt;script src="dist/lib/ieonly/excanvas.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!--[if lt IE 8]&gt;
+    &lt;div class="alert alert-danger"&gt;您正在使用 &lt;strong&gt;过时的&lt;/strong&gt; 浏览器. 是时候 &lt;a href="http://browsehappy.com/"&gt;更换一个更好的浏览器&lt;/a&gt; 来提升用户体验.&lt;/div&gt;
+  &lt;![endif]--&gt;
+&lt;div class="fill"&gt;
+	&lt;div class="row fill"&gt;
+		&lt;div class="col-md-12 column top row" style="height: 40px;"&gt;
+			&lt;div class="top_logo_box" style=""&gt;LOGO&lt;/div&gt;
+			&lt;span class="icon icon-align-justify nav_icon shrink"&gt;&lt;/span&gt;
+			&lt;div style="float: left;margin-left: 20px"&gt;
+				&lt;li style="float: left;"&gt;
+					&lt;span class="icon icon-home nav_icon"&gt;&lt;/span&gt;
+				&lt;/li&gt;
+				&lt;li style="float: left;"&gt;
+					&lt;span class="icon icon-asterisk nav_icon"&gt;&lt;/span&gt;
+				&lt;/li&gt;
+				&lt;li style="float: left;"&gt;
+					&lt;span class="icon icon-envelope nav_icon"&gt;&lt;/span&gt;
+				&lt;/li&gt;
+			&lt;/div&gt;
+			&lt;div style="float: right;margin-right: 20px;"&gt;
+				&lt;li style="float: right;"&gt;
+					&lt;span class="icon icon-off nav_icon"&gt;&lt;/span&gt;
+				&lt;/li&gt;
+				&lt;li style="float: right;"&gt;
+					&lt;span class="icon icon-user nav_icon"&gt;&lt;/span&gt;
+					&lt;span style="padding-left: 5px"&gt;admin&lt;/span&gt;
+				&lt;/li&gt;
+				&lt;li style="float: right;"&gt;
+					&lt;span class="icon icon-cog nav_icon options"&gt;&lt;/span&gt;
+				&lt;/li&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="col-md-1 column left row"&gt;
+			&lt;!-- 自写nav --&gt;
+			&lt;ul class="col-md-12 left_nav"&gt;
+				&lt;li&gt;
+					&lt;a href="#" name="other/home.html" class="nav_boss nav_shrink_a nav_boss_select" &gt;
+	                	&lt;span class="icon icon-home nav_boss_icon"&gt;&lt;/span&gt;
+	                    &lt;span class="nav_boss_text"&gt;首页&lt;/span&gt;
+	                &lt;/a&gt;
+	                &lt;ul class="nav_shrink"&gt;
+	                &lt;/ul&gt;
+	            &lt;/li&gt;
+				&lt;li&gt;
+	                &lt;a href="#" class="nav_boss"&gt;
+	                	&lt;span class="icon icon-book nav_boss_icon"&gt;&lt;/span&gt;
+	                    &lt;span class="nav_boss_text"&gt;基础&lt;b class="caret"&gt;&lt;/b&gt;&lt;/span&gt;
+	                &lt;/a&gt;
+	                &lt;ul class="nav_shrink"&gt;
+	               		&lt;a href="#" name="other/Control_icon.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-star"&gt;&lt;/span&gt;图标&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/Control_buttons.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-bold"&gt;&lt;/span&gt;按钮&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/Control_dialog_box.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-check-empty"&gt;&lt;/span&gt;对话框&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/Control_float_news.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-comment-alt"&gt;&lt;/span&gt;漂浮消息&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/Control_paging.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon text-icon"&gt;Go&lt;/span&gt;分页器&lt;/li&gt;&lt;/a&gt;
+	               &lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+	                &lt;a href="#" class="nav_boss"&gt;
+	                	&lt;span class="icon icon-check-empty nav_boss_icon"&gt;&lt;/span&gt;
+	                    &lt;span class="nav_boss_text"&gt;控件&lt;b class="caret"&gt;&lt;/b&gt;&lt;/span&gt;
+	                &lt;/a&gt;
+	                &lt;ul class="nav_shrink"&gt;
+		               	&lt;a href="#" name="other/Control_Datepicker.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-calendar"&gt;&lt;/span&gt;日期选择&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/Control_sorting.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-sort"&gt;&lt;/span&gt;拖拽排序&lt;/li&gt;&lt;/a&gt;
+	               &lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href="#" class="nav_boss"&gt;
+	                	&lt;span class="icon icon-list-alt nav_boss_icon"&gt;&lt;/span&gt;
+	                    &lt;span class="nav_boss_text"&gt;视图组件&lt;b class="caret"&gt;&lt;/b&gt;&lt;/span&gt;
+	                &lt;/a&gt;
+	              	&lt;ul class="nav_shrink"&gt;
+		               	&lt;a href="#" name="other/view_table.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-table"&gt;&lt;/span&gt;数据表格&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/view_tab.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-credit"&gt;&lt;/span&gt;标签页&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/View_tree_menu.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-th-list"&gt;&lt;/span&gt;树形菜单&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/View_files_upload.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-cloud-upload"&gt;&lt;/span&gt;文件上传&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/View_organization.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-sitemap"&gt;&lt;/span&gt;组织结构&lt;/li&gt;&lt;/a&gt;
+	               &lt;/ul&gt;
+				&lt;/li&gt;
+				&lt;li&gt;
+					&lt;a href="#" class="nav_boss"&gt;
+	                	&lt;span class="icon icon-file nav_boss_icon"&gt;&lt;/span&gt;
+	                    &lt;span class="nav_boss_text"&gt;引入插件&lt;b class="caret"&gt;&lt;/b&gt;&lt;/span&gt;
+	                &lt;/a&gt;
+	              	&lt;ul class="nav_shrink"&gt;
+		               	&lt;a href="#" name="other/echarts.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-line-chart"&gt;&lt;/span&gt;可视化图表&lt;/li&gt;&lt;/a&gt;
+		               	&lt;a href="#" name="other/GridManager.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-table"&gt;&lt;/span&gt;GridManager&lt;/li&gt;&lt;/a&gt;
+	               &lt;/ul&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;div class="col-md-11 column right row"&gt;
+			&lt;div class="black"&gt;&lt;/div&gt;
+			&lt;div class="col-md-12 fill"&gt;
+				&lt;iframe class="iframe" src="other/home.html" frameborder="0" style="width: 100%;height: 100%"&gt;&lt;/iframe&gt;
+				&lt;div class="options_box fill" style="none"&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;script src="Zui/js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="Zui/js/zui.min.js"&gt;&lt;/script&gt;
+&lt;script src="Zui/js/main.js"&gt;&lt;/script&gt;
+&lt;/html&gt;</code></pre>
+	<br>
+	基本布局讲解：<br>
+	引入文件：<pre><code class="language-markup">&lt;meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"&gt;&lt;!--响应式移动端--&gt;
+&lt;link href="Zui/css/zui.min.css" rel="stylesheet"&gt;&lt;!--Zui--&gt;
+&lt;link rel="stylesheet" href="Zui/css/main.css"&gt;&lt;!--引入样式--&gt;
+&lt;link rel="stylesheet" href="Zui/css/main-color.css"&gt;&lt;!--引入样式颜色包--&gt;
+&lt;script src="Zui/js/jquery.min.js"&gt;&lt;/script&gt;&lt;!--引入Jquery--&gt;
+&lt;script src="Zui/js/zui.min.js"&gt;&lt;/script&gt;&lt;!--引入Zui--&gt;
+&lt;script src="Zui/js/main.js"&gt;&lt;/script&gt;&lt;!--引入互动js--&gt;</code>
+	</pre>
+	<br>
+	框架：<pre style="height: 300px;"><code class="language-markup">&lt;div class="fill"&gt;
+	&lt;div class="row fill"&gt;
+		&lt;div class="col-md-12 column top row" style="height: 40px;"&gt;
+			&lt;!--顶部内容区域--&gt;
+			&lt;div class="top_logo_box" style=""&gt;
+				&lt;!--logo区域--&gt;
+
+			&lt;/div&gt;
+			&lt;span class="icon icon-align-justify nav_icon shrink"&gt;&lt;/span&gt;
+
+		&lt;/div&gt;
+		&lt;div class="col-md-1 column left row"&gt;
+			&lt;!--左侧区域--&gt;
+
+		&lt;/div&gt;
+		&lt;div class="col-md-11 column right row"&gt;
+			&lt;div class="black"&gt;&lt;/div&gt;
+			&lt;div class="col-md-12 fill"&gt;
+				&lt;!--右侧区域--&gt;
+
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+	<br>
+	左侧nav与右侧关联：（左侧a标签的name值对应右侧的文件路径）
+	<div style="height: 340px;width: 100%;">
+		<div style="width: 49%;float: left;height: 300px;position: relative;padding-right: 1%;">
+	<pre style="height: 300px;"><code class="language-markup">&lt;!--左侧nav--&gt;
+&lt;ul class="col-md-12 left_nav"&gt;
+	&lt;li&gt;
+		&lt;a href="#" name="other/home.html" class="nav_boss nav_shrink_a nav_boss_select" &gt;
+        	&lt;span class="icon icon-home nav_boss_icon"&gt;&lt;/span&gt;
+            &lt;span class="nav_boss_text"&gt;首页&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;ul class="nav_shrink"&gt;
+        	
+        &lt;/ul&gt;
+    &lt;/li&gt;
+	
+	&lt;li&gt;
+        &lt;a href="#" class="nav_boss"&gt;
+        	&lt;span class="icon icon-book nav_boss_icon"&gt;&lt;/span&gt;
+            &lt;span class="nav_boss_text"&gt;基础&lt;b class="caret"&gt;&lt;/b&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;ul class="nav_shrink"&gt;
+       		&lt;a href="#" name="other/Control_icon.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-star"&gt;&lt;/span&gt;图标&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/Control_buttons.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-bold"&gt;&lt;/span&gt;按钮&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/Control_dialog_box.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-check-empty"&gt;&lt;/span&gt;对话框&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/Control_float_news.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-comment-alt"&gt;&lt;/span&gt;漂浮消息&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/Control_paging.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon text-icon"&gt;Go&lt;/span&gt;分页器&lt;/li&gt;&lt;/a&gt;
+       &lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+        &lt;a href="#" class="nav_boss"&gt;
+        	&lt;span class="icon icon-check-empty nav_boss_icon"&gt;&lt;/span&gt;
+            &lt;span class="nav_boss_text"&gt;控件&lt;b class="caret"&gt;&lt;/b&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;ul class="nav_shrink"&gt;
+           	&lt;a href="#" name="other/Control_Datepicker.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-calendar"&gt;&lt;/span&gt;日期选择&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/Control_sorting.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-sort"&gt;&lt;/span&gt;拖拽排序&lt;/li&gt;&lt;/a&gt;
+       &lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href="#" class="nav_boss"&gt;
+        	&lt;span class="icon icon-list-alt nav_boss_icon"&gt;&lt;/span&gt;
+            &lt;span class="nav_boss_text"&gt;视图组件&lt;b class="caret"&gt;&lt;/b&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      	&lt;ul class="nav_shrink"&gt;
+           	&lt;a href="#" name="other/view_table.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-table"&gt;&lt;/span&gt;数据表格&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/view_tab.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-credit"&gt;&lt;/span&gt;标签页&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/View_tree_menu.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-th-list"&gt;&lt;/span&gt;树形菜单&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/View_files_upload.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-cloud-upload"&gt;&lt;/span&gt;文件上传&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/View_organization.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-sitemap"&gt;&lt;/span&gt;组织结构&lt;/li&gt;&lt;/a&gt;
+       &lt;/ul&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;a href="#" class="nav_boss"&gt;
+        	&lt;span class="icon icon-file nav_boss_icon"&gt;&lt;/span&gt;
+            &lt;span class="nav_boss_text"&gt;引入插件&lt;b class="caret"&gt;&lt;/b&gt;&lt;/span&gt;
+        &lt;/a&gt;
+      	&lt;ul class="nav_shrink"&gt;
+           	&lt;a href="#" name="other/echarts.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-line-chart"&gt;&lt;/span&gt;可视化图表&lt;/li&gt;&lt;/a&gt;
+           	&lt;a href="#" name="other/GridManager.html" class="nav_shrink_a"&gt;&lt;li class="nav_shrink_li"&gt;&lt;span class="icon icon-table"&gt;&lt;/span&gt;GridManager&lt;/li&gt;&lt;/a&gt;
+       &lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+		</div>
+		<div style="width: 49%;float: left;height: 300px;position: relative;padding-left: 1%;">
+	<pre style="height: 300px;"><code class="language-markup">&lt;!--右侧iframe--&gt;
+&lt;iframe class="iframe" src="other/sy.html" frameborder="0" style="width: 100%;height: 100%"&gt;&lt;/iframe&gt;</code></pre>
+		</div>
+	</div>
+	<p>
+		iframe引入内容
+	</p>
+	<pre style="height: 300px;"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;小标题&lt;/title&gt;
+	&lt;link rel="stylesheet" href="../Zui/css/zui.min.css"&gt;
+	&lt;!--IE8只能支持jQuery1.9--&gt;
+	&lt;!--[if lte IE 8]&gt;
+	&lt;script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+	&lt;!--[if lt IE 9]&gt;
+		&lt;script src="jquery-1.9.0.js"&gt;
+	&lt;![endif]--&gt;
+     &lt;!--[if lt IE 9]&gt;
+	  &lt;script src="dist/lib/ieonly/html5shiv.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+	&lt;!--[if lt IE 9]&gt;
+	  &lt;script src="dist/lib/ieonly/respond.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+	&lt;!--[if lt IE 9]&gt;
+	  &lt;script src="dist/lib/ieonly/excanvas.js"&gt;&lt;/script&gt;
+	&lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5"&gt;
+	&lt;!--[if lt IE 8]&gt;
+		&lt;div class="alert alert-danger"&gt;您正在使用 &lt;strong&gt;过时的&lt;/strong&gt; 浏览器. 是时候 &lt;a href="http://browsehappy.com/"&gt;更换一个更好的浏览器&lt;/a&gt; 来提升用户体验.&lt;/div&gt;
+	&lt;![endif]--&gt;
+&lt;/body&gt;
+&lt;script src="../Zui/js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="../Zui/js/zui.min.js"&gt;&lt;/script&gt;
+&lt;/html&gt;</code></pre>
+
+	如若想修改主题颜色，可以参考设置页面中颜色
+	将
+	<pre><code class="language-markup">&lt;link rel="stylesheet" href="zui/css/main-color.css"&gt;</code></pre>
+	替换成：
+	<pre><code class="language-markup">&lt;link rel="stylesheet" href="Zui/css/theme/mashup_66c8d9.css"&gt;</code></pre>
+</body>
+<script src="../Zui/js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+<script>
+$('pre').addClass("line-numbers").css("white-space", "pre-wrap");
+</script>
+
+</html>

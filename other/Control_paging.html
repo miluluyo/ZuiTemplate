@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/zui.min.css">
+	<link rel="stylesheet" href="prism/prism.css">
+	<style>
+.table td{height: 60px;line-height: 60px;text-align: center;}
+.table th{height: 30px;line-height: 30px;text-align: center;}
+caption{text-align: center;font-size: 18px}
+	</style>
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+	<ul class="pager" data-ride="pager" data-page="2" data-rec-total="89"></ul>
+	<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-page="2" data-rec-total="89"&gt;&lt;/ul&gt;</code></pre>
+	<table class="table">
+	<caption>分页器界面元素，只需要使用初始化选项 elements 指定所需的元素名称和顺序即可。</caption>
+		<thead>
+			<tr>
+				<th>元素名称</th>
+				<th>说明</th>
+				<th>预览</th>
+				<th>源码</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>prev</td>
+				<td>上一页</td>
+				<td><ul class="pager" data-ride="pager" data-elements="prev" data-rec-total="100" data-page="2"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="prev" data-rec-total="100" data-page="2"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>next</td>
+				<td>下一页</td>
+				<td><ul class="pager" data-ride="pager" data-elements="next" data-rec-total="100"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt; class="pager" data-ride="pager" data-elements="next" data-rec-total="100"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>prev_icon</td>
+				<td>上一页图标按钮，可以通过 prevIcon 选项自定义按钮图标</td>
+				<td><ul class="pager" data-ride="pager" data-elements="prev_icon" data-rec-total="100" data-page="2"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="prev_icon" data-rec-total="100" data-page="2"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>next_icon</td>
+				<td>下一页图标按钮，可以通过 nextIcon 选项自定义按钮图标</td>
+				<td><ul class="pager" data-ride="pager" data-elements="next_icon" data-rec-total="100"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="next_icon" data-rec-total="100"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>first</td>
+				<td>第一页文字按钮</td>
+				<td><ul class="pager" data-ride="pager" data-elements="first" data-rec-total="100" data-page="2"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="first" data-rec-total="100" data-page="2"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>last</td>
+				<td>最后一页文字按钮</td>
+				<td><ul class="pager" data-ride="pager" data-elements="last" data-rec-total="100"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="last" data-rec-total="100"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>first_icon</td>
+				<td>上一页图标按钮，可以通过 firstIcon 选项自定义按钮图标</td>
+				<td><ul class="pager" data-ride="pager" data-elements="first_icon" data-rec-total="100" data-page="2"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="first_icon" data-rec-total="100" data-page="2"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>last_icon</td>
+				<td>下一页图标按钮，可以通过 lastIcon 选项自定义按钮图标</td>
+				<td><ul class="pager" data-ride="pager" data-elements="last_icon" data-rec-total="100"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="last_icon" data-rec-total="100"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>nav 或 pages</td>
+				<td>页码导航，可以通过 maxNavCount 选项自定义导航上的最多按钮数目</td>
+				<td><ul class="pager" data-ride="pager" data-elements="nav" data-rec-total="1000" data-max-nav-count="6"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="nav" data-rec-total="1000" data-max-nav-count="6"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>goto</td>
+				<td>页面转向输入组</td>
+				<td><ul class="pager" data-ride="pager" data-elements="goto" data-rec-total="1000" data-max-nav-count="6"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="goto" data-rec-total="1000" data-max-nav-count="6"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>size_menu</td>
+				<td>显示每页数目下拉菜单，下拉菜单选项可以通过 pageSizeOptions 选项自定义，通过 menuDirection 来自定义菜单弹出方向</td>
+				<td><ul class="pager" data-ride="pager" data-elements="prev" data-rec-total="100" data-page="2"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="prev" data-rec-total="100" data-page="2"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>total_text</td>
+				<td>总记录数目文本</td>
+				<td><ul class="pager" data-ride="pager" data-elements="total_text" data-rec-total="1000"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="total_text" data-rec-total="1000"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>page_text</td>
+				<td>当前页码文本</td>
+				<td><ul class="pager" data-ride="pager" data-elements="page_text" data-rec-total="1000"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="page_text" data-rec-total="1000"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>total_page_text</td>
+				<td>总页数文本</td>
+				<td><ul class="pager" data-ride="pager" data-elements="total_page_text" data-rec-total="1000"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="total_page_text" data-rec-total="1000"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>page_of_total_text</td>
+				<td>页码和总页码文本</td>
+				<td><ul class="pager" data-ride="pager" data-elements="page_of_total_text" data-rec-total="1000"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="page_of_total_text" data-rec-total="1000"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>items_range_text</td>
+				<td>记录序号范围文本</td>
+				<td><ul class="pager" data-ride="pager" data-elements="items_range_text" data-rec-total="1000"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="items_range_text" data-rec-total="1000"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>page_size_text</td>
+				<td>每页记录数目文本</td>
+				<td><ul class="pager" data-ride="pager" data-elements="page_size_text" data-rec-total="1000"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="page_size_text" data-rec-total="1000"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>space 或 |</td>
+				<td>显示一个空白间隙作为元素间的分隔</td>
+				<td><ul class="pager" data-ride="pager" data-elements="space" data-rec-total="1000"></ul></td>
+				<td>
+					<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-elements="space" data-rec-total="1000"&gt;&lt;/ul&gt;</code></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>简单按钮组合示例</p>
+	<ul class="pager" data-ride="pager" data-page="2" data-rec-total="89" data-max-nav-count="4" data-elements="prev_icon,nav,next_icon"></ul>
+	<pre><code class="language-makup">&lt;ul class="pager" data-ride="pager" data-page="2" data-rec-total="89" data-max-nav-count="4" data-elements="prev_icon,nav,next_icon"&gt;&lt;/ul&gt;</code></pre>
+
+	<p>简单翻页和页码信息组合示例</p>
+	<ul class="pager" data-ride="pager" data-page="2" data-rec-total="89" data-max-nav-count="4" data-elements="prev_icon,page_of_total_text,next_icon"></ul>
+	<pre><code class="language-markup">&lt;ul class="pager" data-ride="pager" data-page="2" data-rec-total="89" data-max-nav-count="4" data-elements="prev_icon,page_of_total_text,next_icon"&gt;&lt;/ul&gt;</code></pre>
+
+	<p>选项</p>
+	<p>选项用于初始化分页器。为一个空的 <ul class="pager"> 元素添加 [data-ride="pager"] 属性来自动进行初始化，通过 [data-*] 属性的形式来指定初始化选项。</p>
+
+	<p>同时也可以随时进行手动初始化。</p>
+	<pre><code class="language-javascript">$('#myPager').pager({
+    page: 1,
+    recTotal: 100
+});</code></pre>
+	<table class="table">
+		<caption>初始化选项</caption>
+		<thead>
+			<tr>
+				<th>选项</th>
+				<th>名称</th>
+				<th>可用值</th>
+				<th>说明</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>page</td>
+				<td>初始状态的当前页码</td>
+				<td>默认为 1</td>
+				<td>大于等于 1 小于等于总页数的整数，输入其他内容将自动转换为符合范围的整数</td>
+			</tr>
+			<tr>
+				<td>recTotal</td>
+				<td>总记录数目</td>
+				<td>默认为 0</td>
+				<td>大于等于 0 的整数</td>
+			</tr>
+			<tr>
+				<td>recPerPage</td>
+				<td>每页记录数</td>
+				<td>默认为 10</td>
+				<td>大于等于 1 的整数</td>
+			</tr>
+			<tr>
+				<td>elements</td>
+				<td>界面元素排列定义</td>
+				<td>默认为 ['first_icon', 'prev_icon', 'pages', 'next_icon', 'last_icon', 'page_of_total_text', 'items_range_text', 'total_text']</td>
+				<td>允许使用字符串数组或者逗号分割的字符串来指定元素名称排列定义，元素名称及对应外观参见上文“界面元素”内容</td>
+			</tr>
+			<tr>
+				<td>elementCreator</td>
+				<td>元素创建器</td>
+				<td>默认为 null</td>
+				<td>可以设置一个函数或者一个对象，具体用法参见下文“自定义”内容</td>
+			</tr>
+			<tr>
+				<td>linkCreator</td>
+				<td>导航链接生成器</td>
+				<td>默认为 '#page={page}'</td>
+				<td>可以设置一个字符串作为链接模板，例如默认值 '#page={page}'（当页码为 1 时生成的链接为 '#page=1'）；或者使用一个回调函数 function(page, pager) 来动态返回链接地址，参数 page 为当前页码，参数 pager 为其他页码信息。</td>
+			</tr>
+			<tr>
+				<td>maxNavCount</td>
+				<td>页码导航最大条目数目</td>
+				<td>默认为 10</td>
+				<td>大于等于 1 的整数。</td>
+			</tr>
+			<tr>
+				<td>prevIcon</td>
+				<td>上一页图标按钮使用的图标</td>
+				<td>默认为 icon-double-angle-left</td>
+				<td>可以使用 控件->图标 中的图标。</td>
+			</tr>
+			<tr>
+				<td>nextIcon</td>
+				<td>上一页图标按钮使用的图标</td>
+				<td>默认为 icon-double-angle-right</td>
+				<td>可以使用 控件->图标 中的图标</td>
+			</tr>
+			<tr>
+				<td>firstIcon</td>
+				<td>第一页图标按钮使用的图标</td>
+				<td>默认为 icon-step-backward</td>
+				<td>可以使用 控件->图标 中的图标。</td>
+			</tr>
+			<tr>
+				<td>lastIcon</td>
+				<td>最后一页图标按钮使用的图标</td>
+				<td>默认为 icon-step-forward</td>
+				<td>可以使用 控件->图标 中的图标。</td>
+			</tr>
+			<tr>
+				<td>menuDirection</td>
+				<td>每页数目选择菜单方向</td>
+				<td>默认为 'dropdown'</td>
+				<td>dropdown：菜单向下弹出；<br>
+					dropup：菜单向上弹出；</td>
+			</tr>
+			<tr>
+				<td>pageSizeOptions</td>
+				<td>每页数目菜单选项</td>
+				<td>默认为 [10, 20, 30, 50, 100]</td>
+				<td>使用一个整数数组来指定允许用户可以选择的每页数目。</td>
+			</tr>
+			<tr>
+				<td>lang</td>
+				<td>当前界面语言</td>
+				<td>默认为 'zh_cn'</td>
+				<td>
+					所以可用的选项包括：<br>
+					zh_cn：使用中文简体界面；<br>
+					zh_tw：使用中文繁体界面；<br>
+					en：使用英文界面；<br>
+					或者指定一个对象来自定义语言文本，例如：
+					<pre><code class="language-javascript">{
+    prev: '上一页',
+    next: '下一页',
+    first: '第一页',
+    last: '最后一页',
+    goto: '跳转',
+    pageOf: '第 {page} 页',
+    totalPage: '共 {totalPage} 页',
+    totalCount: '共 {recTotal} 项',
+    pageSize: '每页 {recPerPage} 项',
+    itemsRange: '第 {start} ~ {end} 项',
+    pageOfTotal: '第 {page}/{totalPage} 页'
+}</code></pre>
+				</td>
+			</tr>
+			<tr>
+				<td>onPageChange</td>
+				<td>当页码变更时的回调函数</td>
+				<td>默认为 null</td>
+				<td>具体用法参见下文“监听页码变更”内容。</td>
+			</tr>
+			<tr>
+				<td>onRender</td>
+				<td>当分页器界面更新并渲染完毕时调用</td>
+				<td>默认为 null</td>
+				<td>该事件回调函数包含一个参数 staet，为当前最新的页码状态信息对象。</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>获取页码状态信息</p>
+	<p>直接访问分页器对象实例的 state 属性对象即可。该对象包含如下属性：</p>
+	<ul>
+		<li>page：当前页码；</li>
+		<li>recPerPage：每页记录数目；</li>
+		<li>recTotal：记录总数；</li>
+		<li>totalPage：总页数；</li>
+		<li>pageRecCount：当前页记录数；</li>
+		<li>skip：已略过的记录数目；</li>
+		<li>start：当前页第一条记录序号；</li>
+		<li>end：当前页最后一条记录序号；</li>
+		<li>prev：上一页页码，如果没有上一页则此属性值为 0；</li>
+		<li>next：下一页页码，如果没有下一页则此属性值为 0。</li>
+	</ul>
+	<p>下面以获取当前页记录数目为例：</p>
+	<pre><code class="language-javascript">// 获取分页器实例对象
+var myPager = $('#myPager').data('zui.pager');
+// 获取页码状态信息对象
+var pageState = myPager.state;
+// 打印当前页记录数目
+console.log('当前页记录数目为', pageState.pageRecCount);</code></pre>
+
+	<p>监听页码变更</p>
+	<p>使用 onPageChange 事件可以监听页码状态变更事件。该事件回调函数参数定义如下：</p>
+	<ul>
+		<li>state: 新的页码状态对象；</li>
+		<li>oldState: 变更之前的页码状态对象。</li>
+	</ul>
+	<p>通过初始化选项监听：</p>
+	<pre><code class="language-javascript">$('#myPager').pager({
+    onPageChange: function(state, oldState) {
+        if (state.page !== oldState.page) {
+            console.log('页码从', oldState.page, '变更为', state.page);
+        }
+    }
+});</code></pre>
+	<p>通过 jQuery 事件绑定监听：</p>
+	<pre><code class="language-javascript">$('#myPager').on('onPageChange', function(e, state, oldState) {
+    if (state.page !== oldState.page) {
+        console.log('页码从', oldState.page, '变更为', state.page);
+    }
+});</code></pre>
+	
+	<p>动态更新</p>
+	<p>除了用户点击或操作界面元素可以更改页码状态，还可以通过分页器的实例方法 set(page, recTotal, recPerPage) 在程序中手动更新界面元素。</p>
+	<p>该方法各参数定义如下：</p>
+	<ul>
+		<li>page: 设置新的页码，如果不更改当前页码，可以传递 null 作为参数的值；</li>
+		<li>recTotal: 设置新记录总数，如果不更改记录总数，可以传递 null 作为参数的值；</li>
+		<li>recPerPage: 设置新的每页记录数目，如果不更改每页记录数目，可以传递 null 作为参数的值；</li>
+	</ul>
+	<pre><code class="language-javascript">// 获取分页器实例对象
+var myPager = $('#myPager').data('zui.pager');
+// 设置当前页码为 2
+myPager.set(2);
+// 设置当前页码为 3，并设置每页记录数目为 20
+myPager.set(3, null, 20);
+// 设置当前页码为 4，并同时设置记录总数为 100， 每页记录数目为 30
+myPager.set(4, 100, 30);</code></pre>
+	<p>该方法还有一种简便形式为 set(newState)，参数 newState 为一个对象，可以在对象中指定需要设置的属性值。</p>
+	<pre><code class="language-javascript">// 获取分页器实例对象
+var myPager = $('#myPager').data('zui.pager');
+// 设置当前页码为 4，并同时设置记录总数为 100， 每页记录数目为 30
+myPager.set({
+    page: 4,
+    recTotal: 100,
+    recPerPage: 30
+});</code></pre>
+
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+</html>

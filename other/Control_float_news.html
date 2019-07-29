@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/zui.min.css">
+	<link rel="stylesheet" href="prism/prism.css">
+	<style>
+.table td{height: 60px;line-height: 60px;text-align: center;}
+.table th{height: 30px;line-height: 30px;text-align: center;}
+caption{text-align: center;font-size: 18px}
+	</style>
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+	<button class="btn fdxx ">显示浮动消息</button>
+	<pre><code class="language-markup">&lt;button class="btn fdxx "&gt;显示浮动消息&lt;/button&gt;</code></pre>
+	<pre><code class="language-javascript">$('.fdxx').on('click', function() { <!-- 点击按钮时显示漂浮消息 -->
+    new $.zui.Messager('这是一个浮动消息。', {
+        icon: 'bell',  <!-- 定义消息图标 -->
+        placement: 'top',
+        type: 'success', <!-- 定义颜色主题 -->
+        close: true, <!-- 禁用关闭按钮 -->
+        fade:  false,  <!-- 禁用渐隐效果 -->
+    	scale: false,   <!-- 禁用缩放动画 -->
+        actions: [{
+	        name: 'undo',
+	        icon: 'undo',
+	        text: '撤销',
+	        action: function() {   <!-- 点击该操作按钮的回调函数 -->
+	            console.log('你点击了撤销按钮。');
+	        }
+	    }]
+    }).show();
+});
+	</code></pre>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>参数</th>
+				<th>可选值</th>
+				<th>说明</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>type</td>
+				<td>'default'(默认)|'primary'|'success'|'info'|'warning'|'danger'|'important'|'special'</td>
+				<td>不同类型的消息对应使用不同的颜色展示</td>
+			</tr>
+			<tr>
+				<td>placement</td>
+				<td>'top'(默认)|'bottom'|'top-left'|'top-right'|'bottom-left'|'bottom-right'|'center'</td>
+				<td>决定消息显示的位置。</td>
+			</tr>
+			<tr>
+				<td>time</td>
+				<td>表示时间延迟，单位毫秒，默认为4000</td>
+				<td>自显示之后超过此时间设定会自动隐藏消息。如果设置为0则不会自动隐藏。</td>
+			</tr>
+			<tr>
+				<td>message</td>
+				<td>默认为 null</td>
+				<td>使用选项来设置要显示的消息。</td>
+			</tr>
+			<tr>
+				<td>parent</td>
+				<td>'body'</td>
+				<td>一个jquery选择器，决定消息内容DOM的父节点。</td>
+			</tr>
+			<tr>
+				<td>icon</td>
+				<td>null</td>
+				<td>可以额外指定一个图标在消息文本之前显示，图标定义参见“控件>图标”章节</td>
+			</tr>
+			<tr>
+				<td>close</td>
+				<td>true(默认)|false</td>
+				<td>如果为true，则在消息右侧显示一个关闭按钮，用户可以自行隐藏消息</td>
+			</tr>
+			<tr>
+				<td>fade</td>
+				<td>true(默认)|false</td>
+				<td>如果为true，则在显示和隐藏消息时使用渐隐渐显的动画效果。</td>
+			</tr>
+			<tr>
+				<td>scale</td>
+				<td>true(默认)|false</td>
+				<td>如果为true，则在显示和隐藏消息时使用缩放的动画效果。</td>
+			</tr>
+			<tr>
+				<td>actions</td>
+				<td>[{action...}]，默认不设置</td>
+				<td>使用包含操作定义对象的数组来自定义操作按钮。</td>
+			</tr>
+			<tr>
+				<td>onAction</td>
+				<td>function(actionName, action, messager)，默认不设置</td>
+				<td>当点击操作按钮时的回调函数，该回调函数的 this 指向当前所点击的按钮，参数定义如下： actionName：操作的名称； action：操作定义对象； * messager：当前的漂浮消息实例。</td>
+			</tr>
+			<tr>
+				<td>cssClass</td>
+				<td>'my-messager'，默认不设置</td>
+				<td>为 .messager 追加额外的 CSS 类</td>
+			</tr>
+			<tr>
+				<td>contentClass</td>
+				<td>'my-messager-content'，默认不设置</td>
+				<td>为 .messager-content 追加额外的 CSS 类</td>
+			</tr>
+			<tr>
+				<td>show</td>
+				<td>true | false(默认)</td>
+				<td>是否在初始化之后立即显示消息。</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+<script>
+// 点击按钮时显示漂浮消息
+$('.fdxx').on('click', function() {
+    new $.zui.Messager('这是一个浮动消息。', {
+        icon: 'bell', // 定义消息图标
+        placement: 'top',
+        type: 'success', // 定义颜色主题
+        close: true, // 禁用关闭按钮
+        fade:  false,  // 禁用渐隐效果
+    	scale: false,   // 禁用缩放动画
+        actions: [{
+	        name: 'undo',
+	        icon: 'undo',
+	        text: '撤销',
+	        action: function() {  // 点击该操作按钮的回调函数
+	            console.log('你点击了撤销按钮。');
+	        }
+	    }]
+    }).show();
+});
+</script>
+</html>

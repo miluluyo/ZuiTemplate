@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/zui.min.css">
+    <link rel="stylesheet" href="prism/prism.css">
+	<link rel="stylesheet" href="../lib/treemap/zui.treemap.min.css">
+
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+	<div id="treemapExample1"></div>
+    引入文件：
+    <pre><code class="language-markup">&lt;link href="../Zui/lib/treemap/zui.treemap.min.css"&gt;
+&lt;script src="../Zui/lib/treemap/zui.treemap.min.js"&gt;&lt;/script&gt;</code></pre>
+    <pre><code class="language-markup">&lt;div id="treemapExample1"&gt;&lt;/div&gt;</code></pre>
+    <pre><code class="language-javascript">$('#treemapExample1').treemap({
+    data: {
+        text: '蔬菜',
+        children: [{
+            html: '<i class="icon icon-heart text-danger"></i> 我的菜',
+            children: [{
+                textColor: 'green',
+                text: '青菜'
+            }, {
+                html: '<span class="text-info">菠菜</span>'
+            }]
+        }, {
+            text: '你的瓜',
+            style: {border: '1px solid green'},
+            collapsed: true,
+            tooltip: '点击展开或折叠',
+            children: ['南瓜', '西瓜', '丝瓜', '苦瓜']
+        }, {
+            text: '甘蓝',
+            children: ['大甘蓝']
+        }, {
+            color: 'orange',
+            textColor: 'white',
+            text: '土豆'
+        }]
+    }
+});</code></pre>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+<script src="../lib/treemap/zui.treemap.min.js"></script>
+<script>
+	$('#treemapExample1').treemap({
+    data: {
+        text: '蔬菜',
+        children: [{
+            html: '<i class="icon icon-heart text-danger"></i> 我的菜',
+            children: [{
+                textColor: 'green',
+                text: '青菜'
+            }, {
+                html: '<span class="text-info">菠菜</span>'
+            }]
+        }, {
+            text: '你的瓜',
+            style: {border: '1px solid green'},
+            collapsed: true,
+            tooltip: '点击展开或折叠',
+            children: ['南瓜', '西瓜', '丝瓜', '苦瓜']
+        }, {
+            text: '甘蓝',
+            children: ['大甘蓝']
+        }, {
+            color: 'orange',
+            textColor: 'white',
+            text: '土豆'
+        }]
+    }
+});
+</script>
+</html>

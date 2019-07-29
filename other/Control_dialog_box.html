@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/zui.min.css">
+	<link rel="stylesheet" href="prism/prism.css">
+	<style>
+.table td{height: 60px;line-height: 60px;text-align: center;}
+.table th{height: 30px;line-height: 30px;text-align: center;}
+caption{text-align: center;font-size: 18px}
+	</style>
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+	<!-- 对话框触发按钮 -->
+	<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal">启动对话框</button>
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+					<h4 class="modal-title">标题</h4>
+				</div>
+				<div class="modal-body">
+					<p>主题内容...</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+					<button type="button" class="btn btn-primary">保存</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<pre><code class="language-markup">&lt;button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal"&gt;启动对话框&lt;/button&gt;
+&lt;div class="modal fade" id="myModal"&gt;
+	&lt;div class="modal-dialog"&gt;
+		&lt;div class="modal-content"&gt;
+			&lt;div class="modal-header"&gt;
+				&lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;×&lt;/span&gt;&lt;span class="sr-only"&gt;关闭&lt;/span&gt;&lt;/button&gt;
+				&lt;h4 class="modal-title"&gt;标题&lt;/h4&gt;
+			&lt;/div&gt;
+			&lt;div class="modal-body"&gt;
+				&lt;p&gt;主题内容...&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="modal-footer"&gt;
+				&lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;关闭&lt;/button&gt;
+				&lt;button type="button" class="btn btn-primary"&gt;保存&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+	<button type="button" class="btn" data-position="fit" data-toggle="modal" data-target="#myModal">默认位置</button>
+	<button type="button" class="btn" data-position="center" data-toggle="modal" data-target="#myModal">窗口中间</button>
+	<button type="button" class="btn" data-position="0" data-toggle="modal" data-target="#myModal">靠近上方</button>
+	<button type="button" class="btn" data-position="100px" data-toggle="modal" data-target="#myModal">距离上方100px</button>
+	<pre><code class="language-markup">&lt;button type="button" class="btn" data-position="fit" data-toggle="modal" data-target="#myModal"&gt;默认位置&lt;/button&gt;
+&lt;button type="button" class="btn" data-position="center" data-toggle="modal" data-target="#myModal"&gt;窗口中间&lt;/button&gt;
+&lt;button type="button" class="btn" data-position="0" data-toggle="modal" data-target="#myModal"&gt;靠近上方&lt;/button&gt;
+&lt;button type="button" class="btn" data-position="100px" data-toggle="modal" data-target="#myModal"&gt;距离上方100px&lt;/button&gt;
+</code></pre>
+<pre><code class="language-markup">&lt;div class="modal fade" id="myModal"&gt;
+	&lt;div class="modal-dialog"&gt;
+		&lt;div class="modal-content"&gt;
+			&lt;div class="modal-header"&gt;
+				&lt;button type="button" class="close" data-dismiss="modal"&gt;&lt;span aria-hidden="true"&gt;×&lt;/span&gt;&lt;span class="sr-only"&gt;关闭&lt;/span&gt;&lt;/button&gt;
+				&lt;h4 class="modal-title"&gt;标题&lt;/h4&gt;
+			&lt;/div&gt;
+			&lt;div class="modal-body"&gt;
+				&lt;p&gt;主题内容...&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="modal-footer"&gt;
+				&lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;关闭&lt;/button&gt;
+				&lt;button type="button" class="btn btn-primary"&gt;保存&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<table class="table">
+	<caption>更改对话框大小</caption>
+	<thead>
+		<th>示例</th>
+		<th>class</th>
+		<th>代码</th>
+	</thead>
+	<tr>
+		<td><button type="button" class="btn" data-toggle="modal" data-target="#myModallg">大对话框</button></td>
+		<td>添加.modal-lg CSS类名，宽度为900px；</td>
+		<td><pre><code class="language-markup">&lt;div class="modal fade" id="myModallg"&gt;
+	&lt;div class="modal-dialog modal-lg"&gt;
+		&lt;div class="modal-content"&gt;
+			...
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre></td>
+		<div class="modal fade" id="myModallg">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+				  ...
+				</div>
+			</div>
+		</div>
+	</tr>
+	
+	<tr>
+		<td><button type="button" class="btn" data-toggle="modal" data-target="#myModalsm">小对话框</button></td>
+		<td>小对话框：添加.modal-sm CSS类名，宽度为300px；</td>
+		<td><pre><code class="language-markup">&lt;div class="modal fade" id="myModalsm"&gt;
+	&lt;div class="modal-dialog modal-sm"&gt;
+		&lt;div class="modal-content"&gt;
+			...
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre></td>
+		<div class="modal fade" id="myModalsm">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+				  ...
+				</div>
+			</div>
+		</div>
+	</tr>
+	<tr>
+		<td><button type="button" class="btn" data-toggle="modal" data-target="#myModalfull">全屏对话框</button></td>
+		<td>全屏对话框：添加.modal-fullscreen CSS类名。</td>
+		<td><pre><code class="language-fullscreen">&lt;div class="modal fade" id="myModalfull"&gt;
+	&lt;div class="modal-dialog modal-fullscreen"&gt;
+		&lt;div class="modal-content"&gt;
+			...
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre></td>
+		<div class="modal fade" id="myModalfull">
+			<div class="modal-dialog modal-fullscreen">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+						<h4 class="modal-title">标题</h4>
+					</div>
+				 	...
+				</div>
+			</div>
+		</div>
+	</tr>
+</table>
+
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+</html>

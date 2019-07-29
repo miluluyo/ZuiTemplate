@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实验上下分布格局</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="css/zui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main-color.css" id="colorcss">
+    <link rel="stylesheet" href="css/jquery.minicolors.css">
+    <!--IE8只能支持jQuery1.9-->
+	<!--[if lte IE 8]>
+	<script src="http://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+		<script src="jquery-1.9.0.js">
+	<![endif]-->
+
+     <!--[if lt IE 9]>
+	  <script src="dist/lib/ieonly/html5shiv.js"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+	  <script src="dist/lib/ieonly/respond.js"></script>
+	<![endif]-->
+	<!--[if lt IE 9]>
+	  <script src="dist/lib/ieonly/excanvas.js"></script>
+	<![endif]-->
+
+    <style>
+
+    </style>
+</head>
+<body>
+<!--[if lt IE 8]>
+    <div class="alert alert-danger">您正在使用 <strong>过时的</strong> 浏览器. 是时候 <a href="http://browsehappy.com/">更换一个更好的浏览器</a> 来提升用户体验.</div>
+  <![endif]-->
+<div class=" fill">
+	<div class="row fill">
+		<div class="col-md-12 column top row" style="height: 40px;">
+			<div class="top_logo_box" style="">鹿遙</div>
+			<span class="icon icon-align-justify nav_icon shrink"></span>
+			<div style="float: left;margin-left: 20px">
+				<li style="float: left;">
+					<span class="icon icon-home nav_icon"></span>
+				</li>
+				<li style="float: left;">
+					<span class="icon icon-asterisk nav_icon"></span>
+				</li>
+				<li style="float: left;">
+					<span class="icon icon-envelope nav_icon"></span>
+				</li>
+			</div>
+			<div style="float: right;margin-right: 20px;">
+				<li style="float: right;">
+					<span class="icon icon-off nav_icon"></span>
+				</li>
+				<li style="float: right;">
+					<span class="icon icon-user nav_icon"></span>
+					<span style="padding-left: 5px">admin</span>
+				</li>
+				<li style="float: right;cursor: pointer;text-align: center;" class=" options_button">
+					<span class="icon icon-cog nav_icon nav_boss" style="display: block;"></span>
+				</li>
+			</div>
+		</div>
+		<div class="col-md-1 column left row">
+			<!-- 自写nav -->
+			<ul class="col-md-12 left_nav">
+				<li>
+					<a href="#" name="other/home.html" class="nav_boss nav_shrink_a nav_boss_select" >
+	                	<span class="icon icon-home nav_boss_icon"></span>
+	                    <span class="nav_boss_text">首页</span>
+	                </a>
+	                <ul class="nav_shrink">
+	                	
+	                </ul>
+	            </li>
+				
+				<li>
+	                <a href="#" class="nav_boss">
+	                	<span class="icon icon-book nav_boss_icon"></span>
+	                    <span class="nav_boss_text">基础<b class="caret"></b></span>
+	                </a>
+	                <ul class="nav_shrink">
+	               		<a href="#" name="other/Control_icon.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-star"></span>图标</li></a>
+		               	<a href="#" name="other/Control_buttons.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-bold"></span>按钮</li></a>
+		               	<a href="#" name="other/Control_dialog_box.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-check-empty"></span>对话框</li></a>
+		               	<a href="#" name="other/Control_float_news.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-comment-alt"></span>漂浮消息</li></a>
+		               	<a href="#" name="other/Control_paging.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon text-icon">Go</span>分页器</li></a>
+	               </ul>
+				</li>
+				<li>
+	                <a href="#" class="nav_boss">
+	                	<span class="icon icon-check-empty nav_boss_icon"></span>
+	                    <span class="nav_boss_text">控件<b class="caret"></b></span>
+	                </a>
+	                <ul class="nav_shrink">
+		               	
+		               	
+		               	
+		               	<a href="#" name="other/Control_Datepicker.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-calendar"></span>日期选择</li></a>
+		               	<a href="#" name="other/Control_sorting.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-sort"></span>拖拽排序</li></a>
+
+		               	<!-- <a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>对话框触发器</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-search"></span>Chosen</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-forward"></span>轮播</li></a> -->
+
+		               	<!-- <a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>进度条</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>标签</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>表单控件</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>多选和单选框</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>开关</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>面包屑</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>图片</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>多级标题</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>分割线</li></a>
+		               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>滚动条</li></a> -->
+	               </ul>
+				</li>
+				<li>
+					<a href="#" class="nav_boss">
+	                	<span class="icon icon-list-alt nav_boss_icon"></span>
+	                    <span class="nav_boss_text">视图组件<b class="caret"></b></span>
+	                </a>
+	              	<ul class="nav_shrink">
+		               	<a href="#" name="other/view_table.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-table"></span>数据表格</li></a>
+		               	<a href="#" name="other/view_tab.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-credit"></span>标签页</li></a>
+		               	<a href="#" name="other/View_tree_menu.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-th-list"></span>树形菜单</li></a>
+		               	<a href="#" name="other/View_files_upload.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-cloud-upload"></span>文件上传</li></a>
+		               	<a href="#" name="other/View_organization.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-sitemap"></span>组织结构</li></a>
+	               </ul>
+				</li>
+				<li>
+					<a href="#" class="nav_boss">
+	                	<span class="icon icon-file nav_boss_icon"></span>
+	                    <span class="nav_boss_text">引入插件<b class="caret"></b></span>
+	                </a>
+	              	<ul class="nav_shrink">
+		               	<a href="#" name="other/echarts.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-line-chart"></span>可视化图表</li></a>
+		               	<a href="#" name="other/GridManager.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-table"></span>GridManager</li></a>
+	               </ul>
+				</li>
+				
+				<!-- <li>
+		                <a href="#" class="nav_boss">
+		                	<span class="icon icon-columns nav_boss_icon"></span>
+		                    <span class="nav_boss_text">组件<b class="caret"></b></span>
+		                </a>
+		                <ul class="nav_shrink">
+			               	<a href="#" name="aaa.html" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>输入框</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>消息框</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>代码</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>输入组</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>列表组</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>导航</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>导航条</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>垂直菜单</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>分页条</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>面板</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>表格</li></a>
+			               	<a href="#" name="" class="nav_shrink_a"><li class="nav_shrink_li"><span class="icon icon-home"></span>按钮组</li></a>
+		               </ul>
+				</li> -->
+			</ul>
+		</div>
+		<div class="col-md-11 column right row">
+			<div class="black"></div>
+			<div class="col-md-12 fill">
+				<iframe class="iframe" src="other/home.html" frameborder="0" style="width: 100%;height: 100%"></iframe>
+				<div class="options_box fill" style="display: none;overflow-y: auto">
+					<div style="width: 96%;margin:20px 2%;margin-bottom: 60px;">
+						<h3><i class="icon icon-dashboard"></i>	主题</h3>
+						<h5>纯色填充</h5>
+						<div class="options_colorbox_pure">
+						</div>
+						<h5>混搭黑填充</h5>
+						<div class="options_colorbox_mashup">
+						</div>
+						<h5>自定义搭配		(如若想自定义颜色，将下面代码颜色生成的代码复制到模版index页面中)</h5>
+						<div class="custom_color">
+							<table class="table table-bordered" style="text-align: center;">
+								<tr>
+									<td>顶部LOGO背景颜色：</td>
+									<td><input type="text" class="changecolor change_top_logo_boxbg" data-control="hue" value="#66c8d9" style="height: 30px;"></td>
+									<td>顶部颜色</td>
+									<td><input type="text" class="changecolor change_topbg" data-control="hue" value="#66c8d9" style="height: 30px;"></td>
+									<td>顶部字体颜色：</td>
+									<td><input type="text" class="changecolor change_topfont" data-control="hue" value="#fff" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td>
+										左侧背景颜色：
+									</td>
+									<td><input type="text" class="changecolor change_leftbg" data-control="hue" value="#000" style="height: 30px;"></td>
+									<td rowspan="12" colspan="4">
+										右侧背景颜色：<input type="text" class="changecolor change_rightbg" data-control="hue" value="#f5f5f5" style="height: 30px;">
+									</td>
+								</tr>
+								<tr>
+									<td>左侧字体颜色：</td>
+									<td><input type="text" class="changecolor change_nav_bossfont" data-control="hue" value="#fff" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td colspan="2">左侧字体及背景详细</td>
+								</tr>
+								<tr>
+									<td>左侧焦点背景颜色：</td>
+									<td><input type="text" class="changecolor change_nav_boss_hoverbg" data-control="hue" value="#66c8d9" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td>左侧焦点字体颜色：</td>
+									<td><input type="text" class="changecolor change_nav_boss_hoverfont" data-control="hue" value="#fff" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td>左侧焦点字体颜色：</td>
+									<td><input type="text" class="changecolor change_nav_boss_selectbg" data-control="hue" value="#fff" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td>左侧选中字体颜色：</td>
+									<td><input type="text" class="changecolor change_nav_boss_selectfont" data-control="hue" value="#66c8d9" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td>左侧展开字体颜色：</td>
+									<td><input type="text" class="changecolor change_nav_shrink_lifont" data-control="hue" value="#fff" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td>左侧展开焦点背景颜色：</td>
+									<td><input type="text" class="changecolor change_nav_shrink_li_hoverbg" data-control="hue" value="#66c8d9" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td>左侧展开焦点字体颜色：</td>
+									<td><input type="text" class="changecolor change_nav_shrink_li_hoverfont" data-control="hue" value="#fff" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td>左侧展开选中背景颜色：</td>
+									<td><input type="text" class="changecolor change_nav_shrink_a_selectbg" data-control="hue" value="#66c8d9" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td>左侧展开选中字体颜色：</td>
+									<td><input type="text" class="changecolor change_nav_shrink_a_selectfont" data-control="hue" value="#fff" style="height: 30px;"></td>
+								</tr>
+								<tr>
+									<td colspan="3"><button class="btn btn-info change_color_save">查看效果</button></td>
+									<td colspan="3"><button class="btn btn-info change_color_create_code">生成代码</button></td>
+								</tr>
+								<tr>
+									<td colspan="6"><pre><code class="language-css change_color_create_code_box"></code></pre></td>
+								</tr>
+								<div class="style_theme"></div>
+							</table>
+							
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<style>
+	.table td, .table th{padding: 0;line-height: 30px;}
+	.options_color_pure{width: 50px;height: 28px;border-radius: 4px;margin-left: 10px;margin-right: 10px;display: inline-block;cursor: pointer;}
+	.options_color_mashup{width: 100px;height: 70px;border-radius: 4px;background-color: #f5f5f5;margin-left: 10px;margin-right: 10px;display: inline-block;cursor: pointer;margin-top: 10px;border: 1px solid #ccc;}
+	.options_colorbox_mashup_top{width: 100%;height: 8px;}
+	.options_colorbox_mashup_left{width: 15px;height: 60px;background-color: #000}
+
+	.options_color_pure:hover{transform: scale(1.1,1.1);}
+	.options_color_mashup:hover{transform: scale(1.1,1.1);}
+
+
+	.color_name{text-align: center;width: 50px;height: 28px;border-radius: 4px;margin-left: 10px;margin-right: 10px;display: inline-block;}
+	.color_name:hover{transform: scale(1.1,1.1);}
+</style>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/zui.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jquery.minicolors.js"></script>
+<script>
+	$(document).on("click",".options_button",function(){
+		$(".options_box").show();
+		$(".iframe").hide();
+	})
+
+	/*选色器*/
+	$(document).ready( function() {
+
+      $('.changecolor').each( function() {
+        $(this).minicolors({
+          control: $(this).attr('data-control') || 'hue',
+          defaultValue: $(this).attr('data-defaultValue') || '',
+          format: $(this).attr('data-format') || 'hex',
+          keywords: $(this).attr('data-keywords') || '',
+          inline: $(this).attr('data-inline') === 'true',
+          letterCase: $(this).attr('data-letterCase') || 'lowercase',
+          opacity: $(this).attr('data-opacity'),
+          position: $(this).attr('data-position') || 'bottom',
+          swatches: $(this).attr('data-swatches') ? $(this).attr('data-swatches').split('|') : [],
+          change: function(hex, opacity) {
+            var log;
+            try {
+              log = hex ? hex : 'transparent';
+              if( opacity ) log += ', ' + opacity;
+              console.log(log);
+            } catch(e) {}
+          },
+          theme: 'default'
+        });
+
+      });
+
+    });
+
+
+/*
+$(document).on("change",".change_topbg",function(){
+	$(".top").css("background",$(".change_topbg").val())
+})
+
+$(document).on("change",".change_topfont",function(){
+	$(".top").css("color",$(".change_topfont").val())
+})
+
+$(document).on("change",".change_top_logo_boxbg",function(){
+	$(".top_logo_box").css("background",$(".change_top_logo_boxbg").val())
+})
+$(document).on("change",".change_leftbg",function(){
+	$(".left").css("background",$(".change_leftbg").val())
+})
+$(document).on("change",".change_nav_bossfont",function(){
+	$(".nav_boss").css("color",$(".change_nav_bossfont").val())
+})
+$(document).on("change",".change_nav_shrink_lifont",function(){
+	$(".nav_shrink_li").css("color",$(".change_nav_shrink_lifont").val())
+})
+
+
+$(document).on("change",".change_nav_boss_hoverbg",function(){
+	$(".nav_boss").hover(function(){
+		$(this).css("background",$(".change_nav_boss_hoverbg").val())
+	},function(){
+		$(this).parent().find(".nav_boss").css("background",$(".change_leftbg").val())
+	})
+})
+$(document).on("change",".change_nav_boss_hoverfont",function(){
+	$(".nav_boss").hover(function(){
+		$(this).css("color",$(".change_nav_boss_hoverfont").val())
+	},function(){
+		$(this).parent().find(".nav_boss").css("color",$(".change_topfont").val())
+	})
+})
+
+$(document).on("change",".change_nav_boss_selectbg",function(){
+	$(".nav_boss_select").css("background",$(".change_nav_boss_selectbg").val())
+})
+$(document).on("change",".change_nav_boss_selectfont",function(){
+	$(".nav_boss_select").css("color",$(".change_nav_boss_selectfont").val())
+})*/
+
+
+$(document).on("click",".change_color_save",function(){
+	$(".style_theme").append("<style>"+
+		".left{background-color:"+$(".change_leftbg").val()+";}"+
+		".right{background-color:"+$(".change_rightbg").val()+";}"+
+		"a:hover,a:focus{color: #66c8d9;}"+
+		"a:focus{background: "+$(".change_nav_boss_selectbg").val()+";}"+
+		".nav_boss{color:"+$(".change_nav_bossfont").val()+";}"+
+		".nav_boss:hover{background: "+$(".change_nav_boss_hoverbg").val()+";color:"+$(".change_nav_boss_hoverfont").val()+"}"+
+		".nav_boss_select{color:"+$(".change_nav_boss_selectfont").val()+";background:"+$(".change_nav_boss_selectbg").val()+";}"+
+		".nav_shrink_li{color:"+$(".change_nav_shrink_lifont").val()+";}"+
+		".nav_shrink_a_select{color:"+$(".change_nav_shrink_a_selectfont").val()+";background:"+$(".change_nav_shrink_a_selectbg").val()+";}"+
+		".nav_shrink li:hover{color:"+$(".change_nav_shrink_li_hoverbg").val()+";background:"+$(".change_nav_shrink_li_hoverfont").val()+";}"+
+		".nav_line{background: #000}"+
+		".right_nav{background:#fff;}"+
+		".top{background:"+$(".change_topbg").val()+";color:"+$(".change_topfont").val()+"} "+
+		".top_logo_box{background-color: "+$(".change_top_logo_boxbg").val()+";}</style>")
+})
+
+$(document).on("click",".change_color_create_code",function(){
+	$(".change_color_create_code_box").html("&lt;style&gt;"+
+		".left{background-color:"+$(".change_leftbg").val()+";}"+
+		".right{background-color:"+$(".change_rightbg").val()+";}"+
+		"a:hover,a:focus{color: #66c8d9;}"+
+		"a:focus{background: "+$(".change_nav_boss_selectbg").val()+";}"+
+		".nav_boss{color:"+$(".change_nav_bossfont").val()+";}"+
+		".nav_boss:hover{background: "+$(".change_nav_boss_hoverbg").val()+";color:"+$(".change_nav_boss_hoverfont").val()+"}"+
+		".nav_boss_select{color:"+$(".change_nav_boss_selectfont").val()+";background:"+$(".change_nav_boss_selectbg").val()+";}"+
+		".nav_shrink_li{color:"+$(".change_nav_shrink_lifont").val()+";}"+
+		".nav_shrink_a_select{color:"+$(".change_nav_shrink_a_selectfont").val()+";background:"+$(".change_nav_shrink_a_selectbg").val()+";}"+
+		".nav_shrink li:hover{color:"+$(".change_nav_shrink_li_hoverbg").val()+";background:"+$(".change_nav_shrink_li_hoverfont").val()+";}"+
+		".nav_line{background: #000}"+
+		".right_nav{background:#fff;}"+
+		".top{background:"+$(".change_topbg").val()+";color:"+$(".change_topfont").val()+"} "+
+		".top_logo_box{background-color: "+$(".change_top_logo_boxbg").val()+";}&lt;/style&gt;")
+})
+
+</script>
+</html>

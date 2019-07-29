@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/zui.min.css">
+	<link rel="stylesheet" href="prism/prism.css">
+	<link href="../lib/datetimepicker/datetimepicker.min.css" rel="stylesheet">
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+    <p>引入文件</p>
+    <pre><code class="language-markup">&lt;link href="../Zui/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet"&gt;
+&lt;script src="../Zui/lib/datetimepicker/datetimepicker.min.js"&gt;</script></code></pre>
+	日期选择：
+	<input type="text" class="form-control form-date" placeholder="选择或者输入一个日期：yyyy-MM-dd">
+	<pre><code class="language-markup">&lt;input type="text" class="form-control form-date" placeholder="选择或者输入一个日期：yyyy-MM-dd"&gt;</code></pre>
+	<pre><code class="language-javascript">$(".form-date").datetimepicker({
+    language:  "zh-CN",
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0,
+    format: "yyyy-mm-dd"
+});</code></pre>
+<br>时间选择：
+<input type="text" class="form-control form-time" placeholder="选择或者输入一个时间：hh:mm">
+<pre><code class="language-markup">&lt;input type="text" class="form-control form-time" placeholder="选择或者输入一个时间：hh:mm"&gt;</code></pre>
+	<pre><code class="language-javascript">$(".form-time").datetimepicker({
+    language:  "zh-CN",
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 1,
+    minView: 0,
+    maxView: 1,
+    forceParse: 0,
+    format: 'hh:ii'
+});</code></pre>
+<br>日期+时间选择：
+<input type="text" class="form-control form-datetime" placeholder="选择或者输入一个日期+时间：yyyy-MM-dd hh:mm">
+<pre><code class="language-markup">&lt;input type="text" class="form-control form-datetime" placeholder="选择或者输入一个日期+时间：yyyy-MM-dd hh:mm"&gt;</code></pre>
+	<pre><code class="language-javascript">$(".form-datetime").datetimepicker({
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    forceParse: 0,
+    showMeridian: 1,
+    format: "yyyy-mm-dd hh:ii"
+});</code></pre>
+<br>
+禁用输入：只允许用户选择一个日期或时间，而不允许自行编辑日期，只需要给 input 加上 readonly 属性。<br>
+<input type="text" class="form-control form-datetime" placeholder="选择或者输入一个日期+时间：yyyy-MM-dd hh:mm" readonly="readonly">
+<br>
+使用输入框组：输入框组可以添加额外的按钮来操作日期选择插件。<br>
+按钮中的.icon-remove用来移除输入的日期。.icon-th,.icon-calendar,.icon-time用来激活日期选择框。<br>
+	<div class="input-group date form-datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1" style="width: 200px;">
+	  	<input class="form-control" size="16" type="text" value="" readonly="">
+	  	<span class="input-group-addon"><span class="icon-remove"></span></span>
+	  	<span class="input-group-addon"><span class="icon-th"></span></span>
+	</div>
+	<div class="input-group date form-date" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" style="width: 200px;">
+		<input class="form-control" size="16" type="text" value="" readonly="">
+		<span class="input-group-addon"><span class="icon-remove"></span></span>
+		<span class="input-group-addon"><span class="icon-calendar"></span></span>
+	</div>
+	<div class="input-group date form-time" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii" style="width: 200px;">
+	  	<input class="form-control" size="16" type="text" value="" readonly="">
+	  	<span class="input-group-addon"><span class="icon-remove"></span></span>
+	  <span class="input-group-addon"><span class="icon-time"></span></span>
+	</div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+<script src="../lib/datetimepicker/datetimepicker.min.js"></script>
+<script>
+	// 仅选择日期
+$(".form-date").datetimepicker({
+    language:  "zh-CN",
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0,
+    format: "yyyy-mm-dd"
+});
+// 选择时间
+$(".form-time").datetimepicker({
+    language:  "zh-CN",
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 1,
+    minView: 0,
+    maxView: 1,
+    forceParse: 0,
+    format: 'hh:ii'
+});
+// 选择时间和日期
+$(".form-datetime").datetimepicker({
+    weekStart: 1,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    forceParse: 0,
+    showMeridian: 1,
+    format: "yyyy-mm-dd hh:ii"
+});
+</script>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="../css/zui.min.css" rel="stylesheet">
+<!--     <link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/main-color.css"> -->
+    <link rel="stylesheet" href="prism/prism.css">
+    <link href="../lib/datagrid/zui.datagrid.min.css" rel="stylesheet">
+ <style>
+	::-webkit-scrollbar {
+	    width: 10px;
+	    height: 10px;
+	}
+	::-webkit-scrollbar-thumb {
+	    min-height: 28px;
+	    padding-top: 100;
+	    background-color: rgba(0,0,0,.2);
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+	    border-radius: 5px;
+	    -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+	}
+</style>
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+<!-- datagrid-borderless 	除去竖直线
+	 datagrid-striped		隔行变色
+ -->
+	<div id="myDataGrid" class="datagrid datagrid-borderless" data-ride="datagrid">
+		<h1>标题</h1>
+  		<div class="input-control search-box search-box-circle has-icon-left has-icon-right" id="searchboxExample2" style="margin-bottom: 10px; max-width: 300px">
+		    <input id="inputSearchExample2" type="search" class="form-control search-input" placeholder="搜索">
+		    <label for="inputSearchExample2" class="input-control-icon-left search-icon"><i class="icon icon-search"></i></label>
+		    <a href="#" class="input-control-icon-right search-clear-btn"><i class="icon icon-remove"></i></a>
+		</div>
+  		<!-- 表格 datagrid-container -->
+		<div class="datagrid-container"></div>
+  		<div class="pager"></div>
+	</div>
+	<div>
+		<button class="judge_rows">点击此处触发判断当前已选中行数据项</button>
+		<button class="judge_news">点击触发消息弹出窗</button>
+	</div>
+	<br>
+	引入文件：
+	<pre><code class="language-markup">&lt;script src="../Zui/lib/datagrid/zui.datagrid.min.js"&gt;&lt;/script&gt;
+&lt;script src="../Zui/lib/selectable/zui.selectable.min.js"&gt;&lt;/script&gt;</code></pre>
+	html:
+	<pre><code class="language-markup line-numbers">&lt;div id="myDataGrid" class="datagrid datagrid-borderless" data-ride="datagrid"&gt;
+	&lt;h1&gt;标题&lt;/h1&gt;
+		&lt;div class="input-control search-box search-box-circle has-icon-left has-icon-right" id="searchboxExample2" style="margin-bottom: 10px; max-width: 300px"&gt;
+	    &lt;input id="inputSearchExample2" type="search" class="form-control search-input" placeholder="搜索"&gt;
+	    &lt;label for="inputSearchExample2" class="input-control-icon-left search-icon"&gt;&lt;i class="icon icon-search"&gt;&lt;/i&gt;&lt;/label&gt;
+	    &lt;a href="#" class="input-control-icon-right search-clear-btn"&gt;&lt;i class="icon icon-remove"&gt;&lt;/i&gt;&lt;/a&gt;
+	&lt;/div&gt;
+	&lt;div class="datagrid-container"&gt;&lt;/div&gt;
+		&lt;div class="pager"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;
+	&lt;button class="judge_rows"&gt;点击此处触发判断当前已选中行数据项&lt;/button&gt;
+	&lt;button class="judge_news"&gt;点击触发消息弹出窗&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+	js：
+	<pre><code class="language-javascript line-numbers">$('#myDataGrid').datagrid({
+    dataSource: {
+        cols:[
+            {name: 'time', label: '时间', width: 132},
+            {name: 'hera', label: '英雄', width: 134},
+            {name: 'action', label: '动作', width: 109},
+            {name: 'target', label: '目标', width: 109},
+            {name: 'desc', label: '描述', width: 287}
+        ],
+        array:[
+            {time: '00:11:12', hero:'幻影刺客', action: '击杀', target: '斧王', desc: '幻影刺客击杀了斧王。'},
+            {time: '00:13:22', hero:'幻影刺客', action: '购买了', target: '隐刀', desc: '幻影刺客购买了隐刀。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+            {time: '00:21:43', hero:'力丸', action: '购买了', target: '隐刀', desc: '力丸购买了隐刀。'}
+        ]
+    },
+    states: {										页码
+        pager: {page: 1, recPerPage: 15},
+        fixedRightFrom: 6
+    },
+   	loading:true,									加载中状态
+    onLoad: function(result) {
+        if (result !== false) {
+        	console.log('数据加载成功', result);
+        }
+    },
+    checkable: true,								可选择
+	checkByClickRow: true,							可选择行数
+	sortable:true,									可否排序	
+	
+});</code></pre>
+	数据获取js：
+	<pre><code class="language-javascript">$(document).on("click",".judge_rows",function(){			获取当前已选中的行数据项
+	var myDataGrid = $('#myDataGrid').data('zui.datagrid');			获取数据表格实例
+	var selectedItems = myDataGrid.getCheckItems();				获取当前已选中的行数据项
+	console.log(selectedItems)
+})
+$(document).on("click",".judge_news",function(){
+	var myDataGrid = $('#myDataGrid').data('zui.datagrid');			获取数据表格实例
+	myDataGrid.showMessage('这是一条提示消息', 'success');			在界面上显示 '这是一条提示消息' 消息。
+})</code></pre>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+<script src="../lib/datagrid/zui.datagrid.min.js"></script>
+<script src="../lib/selectable/zui.selectable.min.js"></script><!-- 可拖拽插件 -->
+<script>
+
+	$('#myDataGrid').datagrid({
+	    dataSource: {
+	        cols:[
+	            {name: 'time', label: '时间', width: 132},
+	            {name: 'hera', label: '英雄', width: 134},
+	            {name: 'action', label: '动作', width: 109},
+	            {name: 'target', label: '目标', width: 109},
+	            {name: 'desc', label: '描述', width: 287}
+	        ],
+	        array:[
+	            {time: '00:11:12', hero:'幻影刺客', action: '击杀', target: '斧王', desc: '幻影刺客击杀了斧王。'},
+	            {time: '00:13:22', hero:'幻影刺客', action: '购买了', target: '隐刀', desc: '幻影刺客购买了隐刀。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:19:36', hero:'斧王', action: '购买了', target: '黑皇杖', desc: '斧王购买了黑皇杖。'},
+	            {time: '00:21:43', hero:'力丸', action: '购买了', target: '隐刀', desc: '力丸购买了隐刀。'}
+	        ]
+	    },
+	    states: {//页码
+	        pager: {page: 1, recPerPage: 15},
+	        fixedRightFrom: 6
+	       // search: ('幻影刺客'),
+	    },
+	   	loading:true,//加载中状态
+	    onLoad: function(result) {
+	        if (result !== false) {
+	        	console.log('数据加载成功', result);
+	        }
+	    },
+	    checkable: true,//可选择
+    	checkByClickRow: true,//可选择行数
+    	sortable:true,//可否排序
+    	
+	});
+	// 获取数据表格实例
+	var myDataGrid = $('#myDataGrid').data('zui.datagrid');
+	// 搜索同时包含 '数据' 和 '表格' 两个关键字的条目
+//	myDataGrid.search('描述');
+
+
+	// 获取当前已选中的行数据项
+	$(document).on("click",".judge_rows",function(){
+		// 获取数据表格实例
+		var myDataGrid = $('#myDataGrid').data('zui.datagrid');
+		// 获取当前已选中的行数据项
+		var selectedItems = myDataGrid.getCheckItems();
+		console.log(selectedItems)
+	})
+	$(document).on("click",".judge_news",function(){
+		// 获取数据表格实例
+		var myDataGrid = $('#myDataGrid').data('zui.datagrid');
+		// 在界面上显示 'haha' 消息。
+		myDataGrid.showMessage('这是一条提示消息', 'success');
+	})
+
+
+
+	$(document).ready(function(){
+		//加载中状态
+		/*var myDataGrid = $('#myDataGrid').data('zui.datagrid');
+		myDataGrid.renderLoading('正在努力获取数据...');
+*/
+		
+	})
+
+	$('#dataGrid').on('onLoad', function(event, result) {
+	    if (result === false) {
+	        console.log('数据加载失败。');
+	        var myDataGrid = $('#myDataGrid').data('zui.datagrid');
+			myDataGrid.renderLoading('数据加载失败...');
+	    }
+	});
+
+
+	
+</script>
+</html>

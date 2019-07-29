@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/zui.min.css">
+	<link rel="stylesheet" href="prism/prism.css">
+<style>
+
+/* 为可拖动的条目应用可移动光标类型 */
+#sortableList > .list-group-item {cursor: move}
+
+/* 为正在被拖动的条目应用半透明外观 */
+#sortableList > .list-group-item.dragging {
+  visibility: visible;
+  opacity: .3;
+}
+.table td{height: 30px;line-height: 30px;text-align: center;}
+.table th{height: 30px;line-height: 30px;text-align: center;}
+caption{text-align: center;font-size: 18px}
+	</style>
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+	<p>引入文件</p>
+    <pre><code class="language-markup">&lt;script src="../Zui/lib/sortable/zui.sortable.min.js"&gt;&lt;/script&gt;</code></pre>
+	<div class="list-group" id="sortableList">
+		<div class="list-group-item"><i class="icon-move"></i> 猫咪</div>
+		<div class="list-group-item"><i class="icon-move"></i> 小鸡</div>
+		<div class="list-group-item"><i class="icon-move"></i> 大黄</div>
+		<div class="list-group-item"><i class="icon-move"></i> 鹅鹅鹅</div>
+		<div class="list-group-item"><i class="icon-move"></i> 猪王</div>
+	</div>
+	<pre><code class="language-markup">&lt;div class="list-group" id="sortableList"&gt;
+	&lt;div class="list-group-item"&gt;&lt;i class="icon-move"&gt;&lt;/i&gt; 猫咪&lt;/div&gt;
+	&lt;div class="list-group-item"&gt;&lt;i class="icon-move"&gt;&lt;/i&gt; 小鸡&lt;/div&gt;
+	&lt;div class="list-group-item"&gt;&lt;i class="icon-move"&gt;&lt;/i&gt; 大黄&lt;/div&gt;
+	&lt;div class="list-group-item"&gt;&lt;i class="icon-move"&gt;&lt;/i&gt; 鹅鹅鹅&lt;/div&gt;
+	&lt;div class="list-group-item"&gt;&lt;i class="icon-move"&gt;&lt;/i&gt; 猪王&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+	<pre><code class="language-css">/* 为可拖动的条目应用可移动光标类型 */
+#sortableList > .list-group-item {cursor: move}
+/* 为正在被拖动的条目应用半透明外观 */
+#sortableList > .list-group-item.dragging {
+  visibility: visible;
+  opacity: .3;
+}</code></pre>
+	<pre><code class="language-javascript">$('#sortableList').sortable();</code></pre>
+	<p>选项</p>
+	<p>在进行初始化时允许传入一个对象或者使用 [data-*] 属性参数作为初始化选项。可以使用的选项如下：</p>
+	<table class="table">
+		<thead>
+		    <tr>
+		      	<th>选项</th>
+			    <th>名称</th>
+			    <th>可选值</th>
+			    <th>描述</th>
+		    </tr>
+		</thead>
+		<tbody>
+		    <tr>
+		      	<td><code>selector</code></td>
+		      	<td>可拖动元素选择器</td>
+		      	<td>默认 <code>'div,li'</code></td>
+		      	<td>使用 jQuery 选择器来指定容器内的哪些元素可以被拖动排序。</td>
+		    </tr>
+		    <tr>
+		     	<td><code>trigger</code></td>
+		      	<td>拖动事件触发元素选择器</td>
+		      	<td>默认为 <code>''</code></td>
+		      	<td>用于选择被拖动元素内部元素的选择器，如果指定该选项，则仅当鼠标在指定的子元素上点按鼠标会触发拖动事件。</td>
+		    </tr>
+		    <tr>
+		      	<td><code>reverse</code></td>
+		      	<td>是否反向排序</td>
+		      	<td>默认为 <code>false</code></td>
+		      	<td>如果设置为 <code>true</code>，则按照 <code>order</code> 从大到小排序。</td>
+		    </tr>
+		    <tr>
+		      	<td><code>dragCssClass</code></td>
+		      	<td>用于被拖动元素的类</td>
+		      	<td>默认 <code>'invisible'</code></td>
+		      	<td>当一个元素正在被拖动时，该选项设置的类会被添加到原元素上。</td>
+		    </tr>
+		    <tr>
+		      	<td><code>sortingClass</code></td>
+		      	<td>拖动时添加的类（1.6+）</td>
+		      	<td>默认 <code>'sortable-sorting'</code></td>
+		      	<td>当有元素被拖动时添加到父级元素上的类。</td>
+		    </tr>
+		    <tr>
+		      	<td><code>mouseButton</code></td>
+		      	<td>响应的鼠标按钮</td>
+		      	<td>默认为 <code>'all'</code></td>
+		      	<td>
+		        	<p>所有可响应的鼠标按钮参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent/button" target="_blank"><code>MouseEvent.button</code></a>：</p>
+		          		<code>'all'</code> 或 <code>-1</code>：响应所有鼠标按键；<br>
+		          		<code>'left'</code> 或 <code>0</code>：响应鼠标左键；<br>
+		          		<code>'middle'</code> 或 <code>1</code>：响应鼠标滚轮（中键）；<br>
+		          		<code>'right'</code> 或 <code>2</code>：响应鼠标右键。<br>
+		      	</td>
+		    </tr>
+		    <tr>
+		      	<td><code>start</code></td>
+		      	<td>拖动前回调函数</td>
+		      	<td>默认不设置</td>
+		      	<td>指定一个回调函数在拖动发生前（<code>mousedown</code> 事件发生时）调用。</td>
+		    </tr>
+		    <tr>
+		      	<td><code>order</code></td>
+		      	<td>顺序发生变化的回调函数</td>
+		      	<td>默认不设置</td>
+		      	<td>指定一个回调函数在拖动元素过程中子元素顺序发生变化时调用。</td>
+		    </tr>
+		    <tr>
+		      	<td><code>finish</code></td>
+		      	<td>拖动完成回调函数</td>
+		      	<td>默认不设置</td>
+		      	<td>指定一个回调函数在拖动完成后（<code>mouseup</code> 事件发生时）调用。</td>
+		    </tr>
+		</tbody>
+	</table>
+	<p>使用选项：</p>
+	<pre><code class="language-javascript">// 定义选项对象
+var options = {
+    selector: '.sortable-item',
+    finish: function(e) {
+        console.log('排序完成：', e);
+    },
+    // 设置更多选项...
+};
+// 初始化时传入选项参数
+$('#sortableList').sortable(options)</code></pre>
+
+
+
+	<p>处理拖放排序过程</p>
+	<p>通过选项设置 start、order、finish 的回调函数来处理整个拖动过程，并实时获取拖动的位置。</p>
+
+	<p>start(e)</p>
+	<p>start(e) 回调函数在拖动发生之前调用，用于处理拖动前的操作。</p>
+
+	<p>order(e)
+	<p>order(e) 回调函数在拖动时且子元素发生顺序变化时被调用，该回调函数参数 e 包含的属性定义如下：</p>
+	<ul>
+		<li>e.list：已当前顺序返回所有可拖动元素；</li>
+		<li>e.element：当前正在被拖动的元素。</li>
+	</ul>
+	<p>finish(e)
+	<p>finish(e) 拖动完成时被调用。该回调函数参数 e 拥有 order 回调函数参数的所有属性。</p>
+
+	<p>$().sortable('destroy')</p>
+	<p>如果以确定不需要拖放排序操作，则可以调用 $().sortable('destroy') 来销毁拖放排序插件。销毁之后如果需要重新启用拖放排序则重新进行初始化即可。</p>
+	<pre><code class="language-javascript">$('#dragDropEles').sortable('destroy');</code></pre>
+	<p>获取排序后的元素数组</p>
+	<ul>
+		<li>$().data('zui.sortable').getItems()</li>
+		<li>$().data('zui.sortable').getItems(onlyElements)</li>
+	</ul>
+	<p>如果为 onlyElements 参数设置为 true，仅返回 jQuery 元素数组，如果不设置此参数或者设置为 false，则返回如下对象组成的数组。</p>
+	<pre><code class="language-javascript">{
+    item,// 被排序的元素
+    order// 当前元素顺序
+}</code></pre>
+
+
+
+
+
+
+
+
+
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+<script src="../lib/sortable/zui.sortable.min.js"></script>
+<script>
+	$('#sortableList').sortable();
+</script>
+</html>

@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="../css/zui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="prism/prism.css">
+     <style>
+	::-webkit-scrollbar {
+	    width: 10px;
+	    height: 10px;
+	}
+	::-webkit-scrollbar-thumb {
+	    min-height: 28px;
+	    padding-top: 100;
+	    background-color: rgba(0,0,0,.2);
+	    -webkit-background-clip: padding-box;
+	    background-clip: padding-box;
+	    border-radius: 5px;
+	    -webkit-box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+	}
+</style>
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+	<nav class="menu" data-ride="menu" style="width: 200px">
+	  <ul id="treeMenu" class="tree tree-menu" data-ride="tree">
+	    <li><a href="#"><i class="icon icon-th"></i>首页</a></li>
+	    <li><a href="#"><i class="icon icon-user"></i>个人资料</a></li>
+	    <li>
+	      <a href="#"><i class="icon icon-time"></i>更新时间</a>
+	      <ul>
+	        <li><a href="#">今天</a></li>
+	        <li><a href="#">明天</a></li>
+	        <li><a href="#">昨天</a></li>
+	        <li><a href="#">本周</a></li>
+	      </ul>
+	    </li>
+	    <li><a href="#"><i class="icon icon-trash"></i>垃圾篓</a></li>
+	    <li><a href="#"><i class="icon icon-list-ul"></i>全部</a></li>
+	    <li class="open">
+	      <a href="#"><i class="icon icon-tasks"></i>状态</a>
+	      <ul>
+	        <li>
+	          <a href="#"><i class="icon icon-circle-blank"></i>已就绪</a>
+	          <ul>
+	            <li><a href="#">已取消</a></li>
+	            <li><a href="#">已关闭</a></li>
+	          </ul>
+	        </li>
+	        <li class="active"><a href="#"><i class="icon icon-play-sign"></i>进行中</a></li>
+	        <li><a href="#"><i class="icon icon-ok-sign"></i>已完成</a></li>
+	      </ul>
+	    </li>
+	  </ul>
+	</nav>
+	<pre><code class="language-markup">&lt;nav class="menu" data-ride="menu" style="width: 200px"&gt;
+	  &lt;ul id="treeMenu" class="tree tree-menu" data-ride="tree"&gt;
+	    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="icon icon-th"&gt;&lt;/i&gt;首页&lt;/a&gt;&lt;/li&gt;
+	    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="icon icon-user"&gt;&lt;/i&gt;个人资料&lt;/a&gt;&lt;/li&gt;
+	    &lt;li&gt;
+	      &lt;a href="#"&gt;&lt;i class="icon icon-time"&gt;&lt;/i&gt;更新时间&lt;/a&gt;
+	      &lt;ul&gt;
+	        &lt;li&gt;&lt;a href="#"&gt;今天&lt;/a&gt;&lt;/li&gt;
+	        &lt;li&gt;&lt;a href="#"&gt;明天&lt;/a&gt;&lt;/li&gt;
+	        &lt;li&gt;&lt;a href="#"&gt;昨天&lt;/a&gt;&lt;/li&gt;
+	        &lt;li&gt;&lt;a href="#"&gt;本周&lt;/a&gt;&lt;/li&gt;
+	      &lt;/ul&gt;
+	    &lt;/li&gt;
+	    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="icon icon-trash"&gt;&lt;/i&gt;垃圾篓&lt;/a&gt;&lt;/li&gt;
+	    &lt;li&gt;&lt;a href="#"&gt;&lt;i class="icon icon-list-ul"&gt;&lt;/i&gt;全部&lt;/a&gt;&lt;/li&gt;
+	    &lt;li class="open"&gt;
+	      &lt;a href="#"&gt;&lt;i class="icon icon-tasks"&gt;&lt;/i&gt;状态&lt;/a&gt;
+	      &lt;ul&gt;
+	        &lt;li&gt;
+	          &lt;a href="#"&gt;&lt;i class="icon icon-circle-blank"&gt;&lt;/i&gt;已就绪&lt;/a&gt;
+	          &lt;ul&gt;
+	            &lt;li&gt;&lt;a href="#"&gt;已取消&lt;/a&gt;&lt;/li&gt;
+	            &lt;li&gt;&lt;a href="#"&gt;已关闭&lt;/a&gt;&lt;/li&gt;
+	          &lt;/ul&gt;
+	        &lt;/li&gt;
+	        &lt;li class="active"&gt;&lt;a href="#"&gt;&lt;i class="icon icon-play-sign"&gt;&lt;/i&gt;进行中&lt;/a&gt;&lt;/li&gt;
+	        &lt;li&gt;&lt;a href="#"&gt;&lt;i class="icon icon-ok-sign"&gt;&lt;/i&gt;已完成&lt;/a&gt;&lt;/li&gt;
+	      &lt;/ul&gt;
+	    &lt;/li&gt;
+	  &lt;/ul&gt;
+	&lt;/nav&gt;</code></pre>
+	<ul class="tree" id="myTree"></ul>
+	<pre><code class="language-markup">&lt;ul class="tree" id="myTree"&gt;&lt;/ul&gt;</code></pre>
+	<pre><code class="language-javascript">var myTreeData = [{
+    title: '水果',
+    url: 'http://zui.sexy',
+    open: true,
+    children: [
+        {title: '橘子'},
+        {
+            title: '瓜',
+            children: [
+              {title: '西瓜'},
+              {title: '黄瓜'}
+            ]
+        }
+    ]
+}, {
+    title: '坚果',
+    children: [
+        {title: '向日葵'},
+        {title: '瓜子'}
+    ]
+}, {
+    title: '蔬菜'
+}];
+
+$('#myTree').tree({data: myTreeData});</code></pre>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+<script>
+	var myTreeData = [{
+    title: '水果',
+    url: 'http://zui.sexy',
+    open: true,
+    children: [
+        {title: '橘子'},
+        {
+            title: '瓜',
+            children: [
+              {title: '西瓜'},
+              {title: '黄瓜'}
+            ]
+        }
+    ]
+}, {
+    title: '坚果',
+    children: [
+        {title: '向日葵'},
+        {title: '瓜子'}
+    ]
+}, {
+    title: '蔬菜'
+}];
+
+$('#myTree').tree({data: myTreeData});
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link href="../css/zui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="prism/prism.css">
+    <link rel="stylesheet" href="../lib/tabs/zui.tabs.min.css">
+ <style>
+.tabs-navbar {
+    padding: 4px 4px 0 0px;
+}
+ </style>
+</head>
+<body style="width: 96%;margin:20px 2%;margin-bottom: 60px;background-color: #f5f5f5">
+	<div class="tabs" id="tabsExample" style="height: 100%;"></div>
+    引入文件：
+    <pre><code class="language-markup">&lt;link href="../Zui/lib/tabs/zui.tabs.min.css"&gt;
+&lt;script src="../Zui/lib/tabs/zui.tabs.min.js"&gt;&lt;/script&gt;</code></pre>
+    html：
+    <pre><code class="language-markup">&lt;div class="tabs" id="tabsExample" style="height: 100%;"&gt;&lt;/div&gt;</code></pre>
+    js:
+    <pre><code class="language-javascript"> var tabs = [{           定义标签页
+    title: 'iframe 例子',
+    url: 'GridManager.html',
+    type: 'iframe',
+    forbidClose: true
+}, {
+    title: '自定义例子',
+    icon: 'icon-star',
+    type: 'custom',
+    content: function() {
+        return '&lt;div class="alert alert-block alert-success"&gt;&lt;p&gt;这里的内容是通过函数动态生成的，每次刷新下面的时间都会更新。&lt;/p&gt;&lt;p&gt;' + (new Date().format('yyyy-MM-dd hh:mm:ss')) +   '&lt;/p&gt;&lt;/div&gt;';
+    }
+}];
+$('#tabsExample').tabs({tabs: tabs});        初始化标签页管理器</code></pre>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/zui.min.js"></script>
+<script src="prism/prism.js"></script>
+<script src="../lib/tabs/zui.tabs.min.js"></script>
+<script>
+// 定义标签页
+var tabs = [{
+    title: 'iframe 例子',
+    url: 'GridManager.html',
+    type: 'iframe',
+    forbidClose: true
+}, {
+    title: '自定义例子',
+    icon: 'icon-star',
+    type: 'custom',
+    content: function() {
+        return '<div class="alert alert-block alert-success"><p>这里的内容是通过函数动态生成的，每次刷新下面的时间都会更新。</p><p>' + (new Date().format('yyyy-MM-dd hh:mm:ss')) +   '</p></div>';
+    }
+}];
+// 初始化标签页管理器
+$('#tabsExample').tabs({tabs: tabs});
+</script>
+</html>
