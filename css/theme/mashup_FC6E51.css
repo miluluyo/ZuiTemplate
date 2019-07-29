@@ -1,0 +1,17 @@
+/* 红 FC6E51 */
+
+.left{background-color: #000;}
+.right{background-color:#f5f5f5;}
+a:hover,a:focus{color: #FC6E51;}
+a:focus{background: #fff;}
+.right{background: #f5f5f5;} 
+.nav_boss{color: #fff;}
+.nav_boss:hover{background: #fff;color: #FC6E51}
+.nav_boss_select{color: #FC6E51;background: #fff;}
+.nav_shrink_li{color: #fff;}
+.nav_shrink_a_select{color: #fff;background: #FC6E51;}
+.nav_shrink li:hover{color: #fff;background: #FC6E51;}
+.nav_line{background: #000}
+.right_nav{background:#fff;}
+.top{background: #FC6E51;color: #fff} 
+.top_logo_box{background-color: #FC6E51;}

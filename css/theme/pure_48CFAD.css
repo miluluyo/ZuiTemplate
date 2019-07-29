@@ -1,0 +1,16 @@
+/*薄荷 48CFAD*/
+.left{background-color: #48CFAD;}
+.right{background-color:#f5f5f5;}
+a:hover,a:focus{color: #48CFAD;}
+a:focus{background: #fff;}
+.right{background: #f5f5f5;} 
+.nav_boss{color: #fff;}
+.nav_boss:hover{background: #fff;color: #48CFAD}
+.nav_boss_select{color: #48CFAD;background: #fff;}
+.nav_shrink_li{color: #fff;}
+.nav_shrink_a_select{color: #48CFAD;background: #fff;}
+.nav_shrink li:hover{color: #48CFAD;background: #fff;}
+.nav_line{background: #000}
+.right_nav{background:#fff;}
+.top{background: #48CFAD;color: #fff} 
+.top_logo_box{background-color: #48CFAD;}

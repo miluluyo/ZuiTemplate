@@ -1,0 +1,18 @@
+
+/*向日葵 FFCE54*/
+
+.left{background-color: #FFCE54;}
+.right{background-color:#f5f5f5;}
+a:hover,a:focus{color: #FFCE54;}
+a:focus{background: #fff;}
+.right{background: #f5f5f5;} 
+.nav_boss{color: #fff;}
+.nav_boss:hover{background: #fff;color: #FFCE54}
+.nav_boss_select{color: #FFCE54;background: #fff;}
+.nav_shrink_li{color: #fff;}
+.nav_shrink_a_select{color: #FFCE54;background: #fff;}
+.nav_shrink li:hover{color: #FFCE54;background: #fff;}
+.nav_line{background: #000}
+.right_nav{background:#fff;}
+.top{background: #FFCE54;color: #fff} 
+.top_logo_box{background-color: #FFCE54;} 

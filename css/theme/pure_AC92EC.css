@@ -1,0 +1,18 @@
+
+/*葡萄柚 AC92EC*/
+
+.left{background-color: #AC92EC;}
+.right{background-color:#f5f5f5;}
+a:hover,a:focus{color: #AC92EC;}
+a:focus{background: #fff;}
+.right{background: #f5f5f5;} 
+.nav_boss{color: #fff;}
+.nav_boss:hover{background: #fff;color: #AC92EC}
+.nav_boss_select{color: #AC92EC;background: #fff;}
+.nav_shrink_li{color: #fff;}
+.nav_shrink_a_select{color: #AC92EC;background: #fff;}
+.nav_shrink li:hover{color: #AC92EC;background: #fff;}
+.nav_line{background: #000}
+.right_nav{background:#fff;}
+.top{background: #AC92EC;color: #fff} 
+.top_logo_box{background-color: #AC92EC;} 
