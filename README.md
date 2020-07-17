@@ -2,6 +2,8 @@
 
 使用zui写的后台管理模版
 
+https://miluluyo.github.io/ZuiTemplate/index.html
+
 之前基于 Jquery、Zui 编写的后台管理模版
 
 ![Image text](https://github.com/Sunwendi/photo_gallery/blob/master/ZuiTemplate1.jpg?raw=true)
